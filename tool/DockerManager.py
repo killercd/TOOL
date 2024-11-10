@@ -78,9 +78,9 @@ class DockerManagerWin(QtWidgets.QMainWindow):
     def update_table(self, containers):
         self.table_docker.setRowCount(len(containers))
         for row, container in enumerate(containers):
-            self.table_docker.setItem(row, 0, QtWidgets.QTableWidgetItem(container[0]))  # Container ID
-            self.table_docker.setItem(row, 1, QtWidgets.QTableWidgetItem(container[1]))  # Name
-            self.table_docker.setItem(row, 2, QtWidgets.QTableWidgetItem(container[2]))  # Status
+            self.table_docker.setItem(row, 0, QtWidgets.QTableWidgetItem(container[0]))  
+            self.table_docker.setItem(row, 1, QtWidgets.QTableWidgetItem(container[1]))
+            self.table_docker.setItem(row, 2, QtWidgets.QTableWidgetItem(container[2]))
         self.progress_bar.setValue(100)
 
 if __name__ == "__main__":
