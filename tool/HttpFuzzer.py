@@ -12,20 +12,13 @@ class HttpFuzzer(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("gui/http_fuzzer.ui", self)
-        self.dropdw_method.addItem("GET")
-        self.dropdw_method.addItem("POST")
-        self.dropdw_method.addItem("PUT")
-        self.dropdw_method.addItem("DELETE")
-        self.dropdw_method.addItem("TRACE")
-        self.dropdw_method.addItem("OPTIONS")
-
-        self.btn_send.clicked.connect(self.send_request)
+        self.btn_send.connect()
 
     def send_request(self):
-        url = self.txt_url.text()
-        response = requests.get(url)
-        self.txt_response.clear()
-        self.txt_response.setPlainText(response.text)
+        url_text = self.txt_url.text()
+        response_text = self.txt_response
+        response = requests.get(url_text)
+
 
 
 if __name__=="__main__":
